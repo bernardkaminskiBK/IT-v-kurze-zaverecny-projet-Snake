@@ -18,11 +18,13 @@ ULOHY:
 PROBLEMY:
 - Martin pracuje pod OP Linux, co sposobilo neoacakavane casove oneskorenie pri instalacii a prepojeni JDK 8
 - Vsetci clenovia teamu nemaju vyraznejsie predchadzajuce skusenosti s Gitom a tak jeho nastaveniu a prepojeniu s Eclipsom bude potrebne venovat viac casu
+
 PRIDANE FUNKCIONALITY:
-- tabulka skore (Berni)
-- polozka option, ktora umoznuje zmenu pozadia BLACK/WHITE (Berni)
+- [✔] tabulka skore (Berni)
+- [✔] polozka option, ktora umoznuje zmenu pozadia BLACK/WHITE (Berni)
+
 ULOHY:
-- [ ] zalozenie noveho repozitra na Gite a udelenie prav teamu (Berni)
+- [✔] zalozenie noveho repozitra na Gite a udelenie prav teamu (Berni)
 - [ ] prepojenie eclipsu s githubom a otestovanie pull-commit (ALL)
 
 #### 4. Teamove stretnutie (Stredu 23.09.2020 - 10:00)
