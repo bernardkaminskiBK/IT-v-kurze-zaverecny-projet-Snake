@@ -52,7 +52,7 @@
             </Label>
             <Label id="highScoreLabel" fx:id="highScoreLabel" layoutX="25.0" layoutY="349.0" prefHeight="67.0" prefWidth="382.0">
                <font>
-                  <Font size="40.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
          </children>
