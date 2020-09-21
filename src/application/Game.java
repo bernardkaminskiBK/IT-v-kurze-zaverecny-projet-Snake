@@ -64,7 +64,7 @@ public class Game {
 		snakeStage = new Stage();
 		snakeStage.setScene(scene);
 		snakeStage.setTitle("Snake run");
-		snakeStage.getIcons().add(new Image("obrazky/snake-icon.png"));
+		snakeStage.getIcons().add(new Image("Obrazky/snake-icon.png"));
 		snakeStage.setResizable(false);
 		snakeStage.show();
 
