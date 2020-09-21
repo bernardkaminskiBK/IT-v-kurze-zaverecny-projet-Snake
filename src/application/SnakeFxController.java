@@ -15,6 +15,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
+/**
+ * Koment sluzi na skusku na git hub
+ */
 public class SnakeFxController implements Initializable {
 
 	@FXML
