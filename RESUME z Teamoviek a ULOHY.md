@@ -28,3 +28,5 @@ ULOHY:
 - [ ] prepojenie eclipsu s githubom a otestovanie pull-commit (ALL)
 
 #### 4. Teamove stretnutie (Stredu 23.09.2020 - 10:00)
+
+<test pull request by mpca86>
