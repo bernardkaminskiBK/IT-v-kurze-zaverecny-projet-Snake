@@ -29,4 +29,4 @@ ULOHY:
 
 #### 4. Teamove stretnutie (Stredu 23.09.2020 - 10:00)
 
-<test pull request by mpca86>
+test pull request by mpca86
