@@ -50,6 +50,11 @@
                   <Font name="Bell MT Italic" size="52.0" />
                </font>
             </Label>
+            <Label id="highScoreLabel" fx:id="highScoreLabel" layoutX="25.0" layoutY="349.0" prefHeight="67.0" prefWidth="382.0">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane id="panePlayerName" fx:id="panePlayerName" prefHeight="430.0" prefWidth="438.0" visible="false">

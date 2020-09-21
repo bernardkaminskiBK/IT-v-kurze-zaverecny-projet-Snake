@@ -61,7 +61,6 @@ public class DB {
 	}
 
 	public ArrayList<Player> getAllPlayers() {
-
 		String sql = "select * from players";
 		ArrayList<Player> players = null;
 		try {
