@@ -59,21 +59,22 @@ public class SnakeFxController implements Initializable {
 
 		playerName.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
 			if (key.getCode() == KeyCode.ENTER) {
-				runOptions();
+				setPlayerName = playerName.getText();
+				runGame();
 			}
 		});
 
 		btnOk.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				runOptions();
+				setPlayerName = playerName.getText();
+				runGame();
 			}
 		});
 		setTextArea();
 	}
 
-	private void runOptions() {
-		setPlayerName = playerName.getText();
+	private void runGame() {
 		if (!setPlayerName.isEmpty() && setPlayerName.length() <= MAX_POCET_CHAR_MENO_HRACA) {
 			game = new Game(setPlayerName.toUpperCase());
 			game.run();
