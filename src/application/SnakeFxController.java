@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 /**
@@ -55,21 +57,31 @@ public class SnakeFxController implements Initializable {
 		basePane.setOpacity(0.3);
 		panePlayerName.setVisible(true);
 
+		playerName.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
+			if (key.getCode() == KeyCode.ENTER) {
+				runOptions();
+			}
+		});
+
 		btnOk.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {
-				setPlayerName = playerName.getText();
-				if (!setPlayerName.isEmpty() && setPlayerName.length() <= MAX_POCET_CHAR_MENO_HRACA) {
-					game = new Game(setPlayerName.toUpperCase());
-					game.run();
-					basePane.setDisable(false);
-					basePane.setOpacity(1);
-					panePlayerName.setVisible(false);
-					playerName.setText("");
-				}
+				runOptions();
 			}
 		});
 		setTextArea();
+	}
+
+	private void runOptions() {
+		setPlayerName = playerName.getText();
+		if (!setPlayerName.isEmpty() && setPlayerName.length() <= MAX_POCET_CHAR_MENO_HRACA) {
+			game = new Game(setPlayerName.toUpperCase());
+			game.run();
+			basePane.setDisable(false);
+			basePane.setOpacity(1);
+			panePlayerName.setVisible(false);
+			playerName.setText("");
+		}
 	}
 
 	@FXML
@@ -121,7 +133,7 @@ public class SnakeFxController implements Initializable {
 		String result = "";
 		int lineCounter = 0;
 		result += String.format("%-10s", "High scores: ") + "\n";
-		result += "----------------------------\n";
+		result += "----------------------\n";
 		for (Player player : players) {
 			lineCounter++;
 			result += String.format("%-5s%5s%10s", lineCounter + ".", player.getMeno(), player.getScore()) + "\n";
