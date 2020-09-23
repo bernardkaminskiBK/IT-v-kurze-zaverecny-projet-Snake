@@ -118,6 +118,8 @@ public class SnakeFxController implements Initializable {
 
 	public void setTextArea() {
 		players = db.getAllPlayers();
+		players.sort(Player.PODLA_SKORE);
+
 		String result = "";
 		int lineCounter = 0;
 		result += String.format("%-3s%10s%10s", "n.", "name:", "score:") + "\n";
