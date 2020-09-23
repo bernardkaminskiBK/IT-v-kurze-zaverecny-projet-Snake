@@ -25,8 +25,21 @@ PRIDANE FUNKCIONALITY:
 
 ULOHY:
 - [✔] zalozenie noveho repozitra na Gite a udelenie prav teamu (Berni)
-- [ ] prepojenie eclipsu s githubom a otestovanie pull-commit (ALL)
+- [✔] prepojenie eclipsu s githubom a otestovanie pull-commit (ALL)
 
 #### 4. Teamove stretnutie (Stredu 23.09.2020 - 10:00)
+PROBLEMY/RIESENIA:
+- Pali sa nemohol tohto stretnutia zucastnit; pocujeme sa s nim v Piatok
+- Berni pomohl s doladenim warrnings pri stustani hry v nasich eclipsoch
+- Berni popisal zakladnu logiku ako funguje nasa databaza
 
-test pull request by mpca86 - test OK :-)
+PRIDANE FUNKCIONALITY:
+- [✔] pridanie polozky Best Player (Berni)
+- [✔] pridanie obrazkov (Berni)
+
+ULOHY:
+- [ ] tabulka skore - ohranicenie player name na menej pismen (Berni)
+- [ ] volba uloh zo zadania projektu, za ktore si zoberieme zodpovednost (ALL)
+- [ ] vytvorenie zoznamu otazok k jednotlivym uloham zo zadania projektu (ALL)
+
+#### 5. Teamove stretnutie (Piatok 25.09.2020 - 10:00)
