@@ -248,7 +248,7 @@ public class Game {
 			cc = Color.ORANGE;
 			break;
 		case 5:
-			cc = Color.FORESTGREEN;
+			cc = Color.LAWNGREEN;
 			break;
 		}
 		graphicsContext.setFill(cc);
