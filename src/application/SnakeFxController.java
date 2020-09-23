@@ -41,6 +41,7 @@ public class SnakeFxController implements Initializable {
 
 	private static final int BLACK_BACKGROUND_COLOR = 1;
 	private static final int WHITE_BACKGROUND_COLOR = 2;
+	private static final int MAX_POCET_CHAR_MENO_HRACA = 3;
 
 	private Game game;
 	private DB db = new DB();
@@ -58,8 +59,8 @@ public class SnakeFxController implements Initializable {
 			@Override
 			public void handle(ActionEvent arg0) {
 				setPlayerName = playerName.getText();
-				if (!setPlayerName.isEmpty()) {
-					game = new Game(setPlayerName);
+				if (!setPlayerName.isEmpty() && setPlayerName.length() <= MAX_POCET_CHAR_MENO_HRACA) {
+					game = new Game(setPlayerName.toUpperCase());
 					game.run();
 					basePane.setDisable(false);
 					basePane.setOpacity(1);
@@ -119,11 +120,11 @@ public class SnakeFxController implements Initializable {
 
 		String result = "";
 		int lineCounter = 0;
-		result += String.format("%-3s%10s%10s", "n.", "name:", "score:") + "\n";
+		result += String.format("%-10s", "High scores: ") + "\n";
 		result += "----------------------------\n";
 		for (Player player : players) {
 			lineCounter++;
-			result += String.format("%-5s%10s%10s", lineCounter + ".", player.getMeno(), player.getScore()) + "\n";
+			result += String.format("%-5s%5s%10s", lineCounter + ".", player.getMeno(), player.getScore()) + "\n";
 		}
 		textArea.setText(result);
 	}
