@@ -11,7 +11,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -25,8 +24,6 @@ public class SnakeFxController implements Initializable {
 	private TextArea textArea;
 	@FXML
 	private TextField playerName;
-	@FXML
-	private Label highScoreLabel;
 	@FXML
 	private Pane basePane;
 	@FXML
@@ -128,25 +125,7 @@ public class SnakeFxController implements Initializable {
 			lineCounter++;
 			result += String.format("%-5s%10s%10s", lineCounter + ".", player.getMeno(), player.getScore()) + "\n";
 		}
-		highScoreLabel.setText(getHighScorePlayer());
 		textArea.setText(result);
-	}
-
-	public String getHighScorePlayer() {
-		String result = "";
-		try {
-			Player bestPlayer = players.get(0);
-			for (Player player : players) {
-				if (player.getScore() > bestPlayer.getScore()) {
-					bestPlayer = player;
-				}
-			}
-			result = "Best score: " + bestPlayer.getScore() + ", " + "*" + bestPlayer.getMeno() + "*";
-
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		return result;
 	}
 
 	@Override
