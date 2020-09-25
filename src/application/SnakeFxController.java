@@ -40,6 +40,10 @@ public class SnakeFxController implements Initializable {
 	private Button btnOk;
 	@FXML
 	private Button btnOption;
+	@FXML
+	private Button btnControl;
+	@FXML
+	private Pane controlPane;
 
 	private static final int BLACK_BACKGROUND_COLOR = 1;
 	private static final int WHITE_BACKGROUND_COLOR = 2;
@@ -88,6 +92,12 @@ public class SnakeFxController implements Initializable {
 	@FXML
 	public void btnQuit(ActionEvent event) {
 		System.exit(0);
+	}
+
+	@FXML
+	public void btnControl(ActionEvent event) {
+		basePane.setVisible(false);
+		controlPane.setVisible(true);
 	}
 
 	@FXML

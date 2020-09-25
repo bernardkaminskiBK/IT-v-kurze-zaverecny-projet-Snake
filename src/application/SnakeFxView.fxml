@@ -36,6 +36,7 @@
             <VBox alignment="TOP_CENTER" layoutX="45.0" layoutY="133.0" prefHeight="98.0" prefWidth="99.0" spacing="25.0">
                <children>
                   <Button id="btnNewGame" fx:id="btnNewGame" mnemonicParsing="false" onAction="#btnNewGame" text="New game" />
+                  <Button id="btnControl" fx:id="btnControl" mnemonicParsing="false" onAction="#btnControl" text="Control" />
                   <Button id="btnOption" fx:id="btnOption" mnemonicParsing="false" onAction="#btnOption" text="Option" />
                   <Button id="btnQuit" fx:id="btnQuit" mnemonicParsing="false" onAction="#btnQuit" text="Quit" />
                </children>
@@ -102,6 +103,15 @@
             </HBox>
             <Button id="btnWhite" fx:id="btnWhite" layoutX="302.0" layoutY="324.0" mnemonicParsing="false" text="White" />
             <Button id="btnBlack" fx:id="btnBlack" layoutX="94.0" layoutY="323.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" text="Black" />
+         </children>
+      </Pane>
+      <Pane id="controlPane" fx:id="controlPane" layoutX="-2.0" prefHeight="430.0" prefWidth="438.0" visible="false">
+         <children>
+            <Label layoutX="30.0" layoutY="54.0" text="Control of Game:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>           
          </children>
       </Pane>
    </children>
