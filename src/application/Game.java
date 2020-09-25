@@ -66,6 +66,7 @@ public class Game {
 		snakeStage.setTitle("Snake run");
 		snakeStage.getIcons().add(new Image("obrazky/snake-icon.png"));
 		snakeStage.setResizable(false);
+		gamePause();
 		snakeStage.show();
 
 	}
@@ -142,6 +143,15 @@ public class Game {
 			graphicsContext.fillText("GAME OVER", 100, 250);
 			db.addNewPlayer(new Player(playerName, getScoreResult()));
 			timer.stop();
+			/**
+			 * NOVA FUNKCIA ! pridana funkcia pri game overy je moznost s enterom zatvorit
+			 * snakeStage(hracie okienko snake).
+			 */
+			snakeStage.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
+				if (key.getCode() == KeyCode.ENTER) {
+					snakeStage.hide();
+				}
+			});
 			return;
 		}
 
@@ -269,6 +279,25 @@ public class Game {
 				graphicsContext.fillOval(c.x * cornersize, c.y * cornersize, cornersize - 2, cornersize - 2);
 			}
 		}
+	}
+
+	/**
+	 * NOVA FUNKCIA ! Pridana nova funkcia pause, zatial funguje stylom ked sa
+	 * stlaci tlacitko P tak pausne hru cize timer je stopnuty, timer sa startne zas
+	 * ked sa stlaci lubovolne tlacitko okrem tlacitka P, je to provizorne zatial
+	 * ale funguje.
+	 */
+	public void gamePause() {
+		snakeStage.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
+			if (key.getCode() == KeyCode.P) {
+				timer.stop();
+				graphicsContext.setFill(Color.DARKGREEN);
+				graphicsContext.setFont(new Font("", 50));
+				graphicsContext.fillText("PAUSE", 180, 250);
+			} else {
+				timer.start();
+			}
+		});
 	}
 
 	public int getScoreResult() {
