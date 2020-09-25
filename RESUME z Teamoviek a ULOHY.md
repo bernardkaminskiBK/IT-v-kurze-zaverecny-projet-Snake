@@ -66,6 +66,7 @@ ULOHY:
 - [ ] prvotne testy vybranych metod (Pali)
 - [ ] na Git subor pouzivateska_prirucka.docx + navrh zakladnej kostry (Marcelka)
 - [ ] na Git subor systemova_prirucka.docx + navrh zakladnej kostry (Marcelka)
+- [✔] funkcionalita polozka Game control - vysvetlivky k ovladaniu hry (Marcelka)
 - [ ] instalacia, spustenie a ohmatanie Scene Builder-a (ALL)
 - [ ] vytvorenie zoznamu otazok na konzultaciu (ALL)
 
