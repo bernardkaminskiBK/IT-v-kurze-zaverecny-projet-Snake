@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Sep 25 18:31:50 CEST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0174-c61b-4494-00000598d268 
+Fri Sep 25 19:36:21 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0174-c656-5649-00000598c498 
 on database directory C:\Users\hp ProBook\git\IT-v-kurze-zaverecny-projet-Snake\SnakeFxDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
 Loaded from file:/C:/Users/hp%20ProBook/git/IT-v-kurze-zaverecny-projet-Snake/db-derby-10.13.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
