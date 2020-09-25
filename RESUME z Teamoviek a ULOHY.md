@@ -49,7 +49,7 @@ PROBLEMY/RIESENIA:
 ZODPOVEDNOST:
 - Uloha c. 1 - analyza a identifikacia tried, metod a instanznych premennych (Pali)
 - Uloha c. 2 - UML diagram (Pali)
-- Uloha c. 3 - pri hre SNAKE nema vyznam nema konzolova verzia hry vyznam (X)
+- Uloha c. 3 - pri hre SNAKE nema konzolova verzia hry vyznam (X)
 - Uloha c. 4 - graficke pouzivatelske rozhranie (Berni)
 - Uloha c. 5 - databaza (Berni)
 - Uloha c. 6 - statistiky (Martin)
@@ -57,8 +57,8 @@ ZODPOVEDNOST:
 - Uloha c. 8 - systemova prirucka (Marcelka)
 
 ULOHY:
-- [ ] player name - default ABC, max dlzka 3 znaky (Martin)
-- [ ] prvotny navrh pre statistiky celkovy cas || nazbierany pocet bodov (Martin)
+- [ ] ohranicenie player name - default ABC, max dlzka 3 znaky (Martin)
+- [ ] prvotny navrh pre statistiky // celkovy cas || nazbierany pocet bodov (Martin)
 - [ ] funcionalita polozka Option - volba tvaru hada // kocka || oval (Berni)
 - [ ] funkcionalita polozka Option - volba obtiaznosti // easy || medium || mega hard (Berni)
 - [ ] funkcionalita moznost Pause pocas hry (volitelna uloha / Berni)
@@ -66,7 +66,7 @@ ULOHY:
 - [ ] prvotne testy vybranych metod (Pali)
 - [ ] na Git subor pouzivateska_prirucka.docx + navrh zakladnej kostry (Marcelka)
 - [ ] na Git subor systemova_prirucka.docx + navrh zakladnej kostry (Marcelka)
-- [ ] isntalacia, spustenie a ohmatanie Scene Builder-a (ALL)
+- [ ] instalacia, spustenie a ohmatanie Scene Builder-a (ALL)
 - [ ] vytvorenie zoznamu otazok na konzultaciu (ALL)
 
 #### 6. Teamove stretnutie / Konzultacia s Lacim (Piatok 28.09.2020 - 11:00)
