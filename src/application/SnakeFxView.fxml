@@ -3,8 +3,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -79,29 +81,57 @@
             </VBox>
          </children>
       </Pane>
-      <Pane id="optionPane" fx:id="optionPane" layoutX="-2.0" prefHeight="430.0" prefWidth="438.0" visible="false">
+      <Pane id="optionPane" fx:id="optionPane" prefHeight="430.0" prefWidth="438.0" visible="false">
          <children>
-            <Label layoutX="30.0" layoutY="54.0" text="Choose your background:">
+            <Label layoutX="23.0" layoutY="14.0" text="Choose your background:">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <HBox layoutX="30.0" layoutY="124.0" prefHeight="184.0" prefWidth="361.0" spacing="30.0">
+            <HBox layoutX="28.0" layoutY="77.0" prefHeight="104.0" prefWidth="263.0" spacing="65.0">
                <children>
-                  <ImageView fitHeight="184.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="104.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Obrazky/Background_BLACK.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="174.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="104.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Obrazky/Background_WHITE.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <Button id="btnWhite" fx:id="btnWhite" layoutX="302.0" layoutY="324.0" mnemonicParsing="false" text="White" />
-            <Button id="btnBlack" fx:id="btnBlack" layoutX="94.0" layoutY="323.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="63.0" text="Black" />
+            <RadioButton id="rdBtnBlack" fx:id="rdBtnBlack" layoutX="28.0" layoutY="52.0" mnemonicParsing="false" text="Black">
+               <toggleGroup>
+                  <ToggleGroup fx:id="backgroundOption" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="rdBtnWhite" fx:id="rdBtnWhite" layoutX="199.0" layoutY="52.0" mnemonicParsing="false" text="White" toggleGroup="$backgroundOption" />
+            <Button id="btnOptionOk" fx:id="btnOptionOk" layoutX="203.0" layoutY="391.0" mnemonicParsing="false" text="OK" />
+            <RadioButton id="rdBtnRectSnake" fx:id="rdBtnRectSnake" layoutX="28.0" layoutY="239.0" mnemonicParsing="false" text="Rectangle">
+               <toggleGroup>
+                  <ToggleGroup fx:id="shapeOfSnake" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="rdBtnOvalSnake" fx:id="rdBtnOvalSnake" layoutX="196.0" layoutY="239.0" mnemonicParsing="false" text="Oval" toggleGroup="$shapeOfSnake" />
+            <Label layoutX="23.0" layoutY="194.0" text="Choose your snake:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="276.0" text="Choose your snake color:">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <RadioButton id="snakeColorGreen" fx:id="snakeColorGreen" layoutX="28.0" layoutY="327.0" mnemonicParsing="false" text="Green">
+               <toggleGroup>
+                  <ToggleGroup fx:id="snakeColor" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="snakeColorOrange" fx:id="snakeColorOrange" layoutX="109.0" layoutY="327.0" mnemonicParsing="false" text="Orange" toggleGroup="$snakeColor" />
+            <RadioButton id="snakeColorPurple" fx:id="snakeColorPurple" layoutX="197.0" layoutY="327.0" mnemonicParsing="false" text="Purple" toggleGroup="$snakeColor" />
          </children>
       </Pane>
    </children>

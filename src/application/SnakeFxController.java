@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import Database.DB;
 import Database.Player;
 import javafx.event.ActionEvent;
@@ -11,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -33,23 +36,45 @@ public class SnakeFxController implements Initializable {
 	@FXML
 	private Pane optionPane;
 	@FXML
-	private Button btnWhite;
-	@FXML
-	private Button btnBlack;
-	@FXML
 	private Button btnOk;
 	@FXML
 	private Button btnOption;
+	@FXML
+	private Button btnOptionOk;
+	@FXML
+	private RadioButton rdBtnBlack;
+	@FXML
+	private RadioButton rdBtnWhite;
+	@FXML
+	private RadioButton rdBtnRectSnake;
+	@FXML
+	private RadioButton rdBtnOvalSnake;
+	@FXML
+	private RadioButton snakeColorGreen;
+	@FXML
+	private RadioButton snakeColorOrange;
+	@FXML
+	private RadioButton snakeColorPurple;
 
 	private static final int BLACK_BACKGROUND_COLOR = 1;
 	private static final int WHITE_BACKGROUND_COLOR = 2;
-	private static final int MAX_POCET_CHAR_MENO_HRACA = 3;
+
+	private static final int SNAKE_COLOR_GREEN = 1;
+	private static final int SNAKE_COLOR_ORANGE = 2;
+	private static final int SNAKE_COLOR_PURPLE = 3;
+
+	private static final int OVAL_SNAKE = 1;
+	private static final int RECTANGLE_SNAKE = 2;
+
+	private static final int POCET_CHAR_MENO_HRACA = 3;
 
 	private Game game;
 	private DB db = new DB();
 	private ArrayList<Player> players;
 	private String setPlayerName;
-	public static int backgroundColor = 1;
+	public static int BACKGROUND_COLOR = 1;
+	public static int SHAPE_SNAKE = 1;
+	public static int COLOR_SNAKE = 1;
 
 	@FXML
 	public void btnNewGame(ActionEvent event) {
@@ -75,13 +100,17 @@ public class SnakeFxController implements Initializable {
 	}
 
 	private void runGame() {
-		if (!setPlayerName.isEmpty() && setPlayerName.length() <= MAX_POCET_CHAR_MENO_HRACA) {
+		if (!setPlayerName.isEmpty() && setPlayerName.length() == POCET_CHAR_MENO_HRACA) {
+			SnakeFx.mainStage.hide();
 			game = new Game(setPlayerName.toUpperCase());
 			game.run();
 			basePane.setDisable(false);
 			basePane.setOpacity(1);
 			panePlayerName.setVisible(false);
 			playerName.setText("");
+		} else {
+			JOptionPane.showMessageDialog(null, "Entering player name is uncorrect. \r\n"
+					+ "\r\nThe given name must have three letters." + "\r\nTIP: example name ABC, WER, etc.");
 		}
 	}
 
@@ -95,23 +124,63 @@ public class SnakeFxController implements Initializable {
 		basePane.setVisible(false);
 		optionPane.setVisible(true);
 
-		btnWhite.setOnAction(new EventHandler<ActionEvent>() {
+		rdBtnBlack.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				optionPane.setVisible(false);
-				basePane.setVisible(true);
-				backgroundColor = WHITE_BACKGROUND_COLOR;
+				BACKGROUND_COLOR = BLACK_BACKGROUND_COLOR;
 			}
 		});
 
-		btnBlack.setOnAction(new EventHandler<ActionEvent>() {
+		rdBtnWhite.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				optionPane.setVisible(false);
-				basePane.setVisible(true);
-				backgroundColor = BLACK_BACKGROUND_COLOR;
+				BACKGROUND_COLOR = WHITE_BACKGROUND_COLOR;
 			}
 		});
+
+		rdBtnRectSnake.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				SHAPE_SNAKE = RECTANGLE_SNAKE;
+			}
+		});
+
+		rdBtnOvalSnake.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				SHAPE_SNAKE = OVAL_SNAKE;
+			}
+		});
+
+		snakeColorGreen.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				COLOR_SNAKE = SNAKE_COLOR_GREEN;
+			}
+		});
+
+		snakeColorOrange.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				COLOR_SNAKE = SNAKE_COLOR_ORANGE;
+			}
+		});
+
+		snakeColorPurple.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				COLOR_SNAKE = SNAKE_COLOR_PURPLE;
+			}
+		});
+
+		btnOptionOk.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {
+				optionPane.setVisible(false);
+				basePane.setVisible(true);
+			}
+		});
+
 	}
 
 	@FXML

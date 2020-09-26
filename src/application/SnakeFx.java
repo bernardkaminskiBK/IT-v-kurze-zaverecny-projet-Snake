@@ -8,6 +8,9 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class SnakeFx extends Application {
+
+	public static Stage mainStage;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -18,6 +21,7 @@ public class SnakeFx extends Application {
 			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			mainStage = primaryStage;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
