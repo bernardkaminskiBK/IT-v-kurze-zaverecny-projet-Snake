@@ -55,6 +55,11 @@ public class SnakeFxController implements Initializable {
 	private RadioButton snakeColorOrange;
 	@FXML
 	private RadioButton snakeColorPurple;
+	private Button btnControl;
+	@FXML
+	private Pane controlPane;
+	@FXML
+	private Button btnBack;
 
 	private static final int BLACK_BACKGROUND_COLOR = 1;
 	private static final int WHITE_BACKGROUND_COLOR = 2;
