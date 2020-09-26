@@ -66,7 +66,7 @@ public class Game {
 		snakeStage = new Stage();
 		snakeStage.setScene(scene);
 		snakeStage.setTitle("Snake run");
-		snakeStage.getIcons().add(new Image("obrazky/snake-icon.png"));
+		snakeStage.getIcons().add(new Image("Obrazky/snake-icon.png"));
 		snakeStage.setResizable(false);
 		snakeStage.show();
 
@@ -259,7 +259,7 @@ public class Game {
 			cc = Color.ORANGE;
 			break;
 		case 5:
-			cc = Color.FORESTGREEN;
+			cc = Color.LAWNGREEN;
 			break;
 		}
 		graphicsContext.setFill(cc);

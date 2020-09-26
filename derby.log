@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Mon Sep 21 20:36:54 CEST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0174-b1f4-55e2-000006112d28 
-on database directory C:\Users\berna\eclipse-wrokspace CV\SnakeFx\SnakeFxDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
-Loaded from file:/C:/Users/berna/eclipse-wrokspace%20CV/SnakeFx/db-derby-10.13.1.1-bin/lib/derby.jar
+Fri Sep 25 19:36:21 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-0174-c656-5649-00000598c498 
+on database directory C:\Users\hp ProBook\git\IT-v-kurze-zaverecny-projet-Snake\SnakeFxDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/hp%20ProBook/git/IT-v-kurze-zaverecny-projet-Snake/db-derby-10.13.1.1-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_261-b12
-user.dir=C:\Users\berna\eclipse-wrokspace CV\SnakeFx
+user.dir=C:\Users\hp ProBook\git\IT-v-kurze-zaverecny-projet-Snake
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

@@ -126,6 +126,20 @@ public class SnakeFxController implements Initializable {
 	}
 
 	@FXML
+	public void btnControl(ActionEvent event) {
+		basePane.setVisible(false);
+		controlPane.setVisible(true);
+		
+		btnBack.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				controlPane.setVisible(false);
+				basePane.setVisible(true);
+			}
+		});
+	}
+
+	@FXML
 	public void btnOption(ActionEvent event) {
 		basePane.setVisible(false);
 		optionPane.setVisible(true);
