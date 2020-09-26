@@ -7,6 +7,7 @@ import java.util.Random;
 import Database.DB;
 import Database.Player;
 import javafx.animation.AnimationTimer;
+import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -17,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Game {
 
@@ -66,8 +68,9 @@ public class Game {
 		snakeStage.setTitle("Snake run");
 		snakeStage.getIcons().add(new Image("Obrazky/snake-icon.png"));
 		snakeStage.setResizable(false);
-		gamePause();
 		snakeStage.show();
+
+		gamePause();
 
 	}
 
@@ -142,16 +145,14 @@ public class Game {
 			graphicsContext.setFont(new Font("", 50));
 			graphicsContext.fillText("GAME OVER", 100, 250);
 			db.addNewPlayer(new Player(playerName, getScoreResult()));
-			timer.stop();
-			/**
-			 * NOVA FUNKCIA ! pridana funkcia pri game overy je moznost s enterom zatvorit
-			 * snakeStage(hracie okienko snake).
-			 */
-			snakeStage.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
-				if (key.getCode() == KeyCode.ENTER) {
-					snakeStage.hide();
-				}
+			// PauseTransition nam umozni zatvorit snakeStage automaticky po game overy.
+			PauseTransition wait = new PauseTransition(Duration.seconds(0.75));
+			wait.setOnFinished((e) -> {
+				snakeStage.close();
+				SnakeFx.mainStage.show();
 			});
+			wait.play();
+			timer.stop();
 			return;
 		}
 
@@ -211,7 +212,7 @@ public class Game {
 	}
 
 	private void setBackground() {
-		switch (SnakeFxController.backgroundColor) {
+		switch (SnakeFxController.BACKGROUND_COLOR) {
 		case 1:
 			graphicsContext.setFill(Color.BLACK);
 			graphicsContext.fillRect(0, 0, width * cornersize, height * cornersize);
@@ -224,7 +225,7 @@ public class Game {
 	}
 
 	private void setScoreStyle() {
-		switch (SnakeFxController.backgroundColor) {
+		switch (SnakeFxController.BACKGROUND_COLOR) {
 		case 1:
 			graphicsContext.setFill(Color.WHITE);
 			graphicsContext.setFont(new Font("", 30));
@@ -267,26 +268,38 @@ public class Game {
 
 	private void setSnakeColorAndSize() {
 		for (Corner c : snake) {
-			if (SnakeFxController.backgroundColor == 1) {
-				graphicsContext.setFill(Color.LIGHTGREEN);
-				graphicsContext.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 1, cornersize - 1);
-				graphicsContext.setFill(Color.GREEN);
-				graphicsContext.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 2, cornersize - 2);
-			} else {
-				graphicsContext.setFill(Color.LIGHTYELLOW);
+			switch (SnakeFxController.SHAPE_SNAKE) {
+			case 1:
+				graphicsContext.setFill(Color.LINEN);
 				graphicsContext.fillOval(c.x * cornersize, c.y * cornersize, cornersize - 1, cornersize - 1);
-				graphicsContext.setFill(Color.ORANGE);
+				graphicsContext.setFill(setSnakeColor());
 				graphicsContext.fillOval(c.x * cornersize, c.y * cornersize, cornersize - 2, cornersize - 2);
+				break;
+			case 2:
+				graphicsContext.setFill(Color.LINEN);
+				graphicsContext.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 1, cornersize - 1);
+				graphicsContext.setFill(setSnakeColor());
+				graphicsContext.fillRect(c.x * cornersize, c.y * cornersize, cornersize - 2, cornersize - 2);
+				break;
 			}
 		}
 	}
 
-	/**
-	 * NOVA FUNKCIA ! Pridana nova funkcia pause, zatial funguje stylom ked sa
-	 * stlaci tlacitko P tak pausne hru cize timer je stopnuty, timer sa startne zas
-	 * ked sa stlaci lubovolne tlacitko okrem tlacitka P, je to provizorne zatial
-	 * ale funguje.
-	 */
+	private Color setSnakeColor() {
+		Color cc = null;
+		switch (SnakeFxController.COLOR_SNAKE) {
+		case 1:
+			cc = Color.GREEN;
+			break;
+		case 2:
+			cc = Color.ORANGE;
+			break;
+		case 3:
+			cc = Color.PURPLE;
+		}
+		return cc;
+	}
+
 	public void gamePause() {
 		snakeStage.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
 			if (key.getCode() == KeyCode.P) {
