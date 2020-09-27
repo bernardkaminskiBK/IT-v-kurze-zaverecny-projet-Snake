@@ -79,7 +79,7 @@ public class Game {
 		snake = new ArrayList<>();
 		gameOver = false;
 	}
-
+	
 	private void newFood() {
 		start: while (true) {
 			foodX = rand.nextInt(width);
@@ -316,4 +316,114 @@ public class Game {
 	public int getScoreResult() {
 		return scoreResult;
 	}
+
+	/**
+	 * @return the speed
+	 */
+	public int getSpeed() {
+		return speed;
+	}
+
+	/**
+	 * @return the foodcolor
+	 */
+	public int getFoodcolor() {
+		return foodcolor;
+	}
+
+	/**
+	 * @return the width
+	 */
+	public int getWidth() {
+		return width;
+	}
+
+	/**
+	 * @return the height
+	 */
+	public int getHeight() {
+		return height;
+	}
+
+	/**
+	 * @return the foodX
+	 */
+	public int getFoodX() {
+		return foodX;
+	}
+
+	/**
+	 * @return the foodY
+	 */
+	public int getFoodY() {
+		return foodY;
+	}
+
+	/**
+	 * @return the cornersize
+	 */
+	public int getCornersize() {
+		return cornersize;
+	}
+
+	/**
+	 * @return the snake
+	 */
+	public List<Corner> getSnake() {
+		return snake;
+	}
+
+	/**
+	 * @return the direction
+	 */
+	public Dir getDirection() {
+		return direction;
+	}
+
+	/**
+	 * @return the gameOver
+	 */
+	public boolean isGameOver() {
+		return gameOver;
+	}
+
+	/**
+	 * @return the rand
+	 */
+	public Random getRand() {
+		return rand;
+	}
+
+
+	/**
+	 * @return the playerName
+	 */
+	public String getPlayerName() {
+		return playerName;
+	}
+	
+	
+	/**
+	 * newFood pre Test
+	 */
+	public void newFoodTest() {
+		newFood();
+	}
+	
+	/**
+	 * snake pre test
+	 */
+	public void initialShapeOfSnakeTest() {
+		initialShapeOfSnake();
+	}
+	
+	/**
+	 * Eat food pre Test
+	 */
+	public void eatFoodTest() {
+		eatFood();
+	}
+	
+
+
 }
